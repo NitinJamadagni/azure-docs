@@ -32,3 +32,4 @@ The firewall and proxy URLs below must be allowlisted in order to enable communi
 |Python package| 443 | `*.pypi.org`| Management machine needs outbound connection. | Validate Kubernetes and Python versions.|
 |Azure CLI| 443 | `*.pythonhosted.org`| Management machine needs outbound connection. | Python packages for Azure CLI installation.|
 |Diagnostic data | 443 | `gcs.prod.monitoring.core.windows.net`	|	Appliance VM IPs need outbound connection. | Used periodically to send Microsoft required diagnostic data from control plane nodes.|
+|Windows NTP Server| 123 | `time.windows.com` - UDP | Appliance VM ( and potentially the Management machine - only if HyperV is using default windows NTP ) needs outbound connection on UDP | Used for OS time sync in appliance VM. If Hypervisor is using windows NTP server then it will follow the same as well.
